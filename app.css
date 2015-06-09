@@ -1,0 +1,11 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 10px 10px 10px 10px;
+  font-family: Verdana,
+     "Microsoft YaHei", "微软雅黑",
+     "WenQuanYi Micro Hei";
+}

@@ -1,0 +1,37 @@
+<template name="Layout">
+  {{> Header}}
+
+  {{> yield}}
+
+  {{> Footer}}
+</template>
+
+<template name="Header">
+  <div class="header navbar navbar-default" role="navigation">
+      <div class="navbar-collapse collapse">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            <img alt="Brand" src="/logo-eng.png" height="100%">
+          </a>
+          <a class="navbar-brand" href="/">
+            Newfairs Data Admin Console
+          </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          {{> loginButtons align="right"}}
+        </ul>
+      </div>
+  </div>
+</template>
+
+<template name="Footer">
+  <nav class="footer navbar navbar-fixed-bottom">
+    <div class="container">
+      <div class="row" style="text-align:center">
+        <div class="col-sm-10 col-sm-offset-1">
+          <a href="#">© 2015 NewFairs</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</template>
