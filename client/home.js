@@ -3,7 +3,6 @@ if (Meteor.isClient) {
   Template.Home.helpers({
     colls: function () {
       var mycolls = Meteor.user().profile.colls;
-      //return Meteor.call('getColls', Meteor.user()._id);
       return mycolls;
     }
   });

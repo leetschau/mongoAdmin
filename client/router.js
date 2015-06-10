@@ -6,20 +6,10 @@ Router.route('/', function() {
   this.render('Home');
 });
 
-Router.route('/details', function() {
-  this.render('Details');
-});
-
-Router.route('/details/:collName', function() {
-  var that = this;
-  Meteor.call('getCollContext', this.params.collName, function(err, result) {
-      if (err) {
-          alert(err);
-      } else {
-          that.render('Details', {
-              data: result
-          });
-      }
+Router.route('/colls/:collName', function() {
+  //this.render('Coll-' + this.params.collName);
+  //this.render('colfairs');
+  this.render('DBColl', {
+    data: { colname: this.params.collName.toTitleCase() }
   });
-  this.render('WaitingforResult');
 });

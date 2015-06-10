@@ -14,10 +14,11 @@ AdSchema = new SimpleSchema({
 });
 
 var Schemas = {};
+
 Schemas.Fair = new SimpleSchema({
-  chnName: { type: String },
-  engName: { type: String },
-  time: { type: Date },
+  chnName: { type: String, label: "Chinese Name" },
+  engName: { type: String, label: "English Name" },
+  time: { type: Date, label: "Start Date" },
   position: { type: String },
   period: { type: Number, min: 0, max: 5, optional: true },
   firstYear: { type: Number, min: 1600, max: 2200, optional: true },
@@ -36,3 +37,13 @@ Schemas.Fair = new SimpleSchema({
 
 Fairs.attachSchema(Schemas.Fair);
 
+Books = new Mongo.Collection("books");
+
+Schemas.Book = new SimpleSchema({
+  title: { type: String, label: "Titile" },
+  author: { type: String, label: "Author" },
+  copies: { type: Number, label: "Number of copies" },
+  lastCheckedOut: { type: Date, label: "Last checkout date" },
+});
+
+Books.attachSchema(Schemas.Book);

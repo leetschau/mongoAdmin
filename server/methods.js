@@ -1,6 +1,6 @@
 Meteor.methods({
-  getColls: function(userid) {
-    console.log(userid);
+  getCollContext: function(collName) {
+    console.log(collName);
     return { name: 'fairs', url: 'abc' };
   }
 });
