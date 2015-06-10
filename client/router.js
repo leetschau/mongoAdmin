@@ -7,8 +7,6 @@ Router.route('/', function() {
 });
 
 Router.route('/colls/:collName', function() {
-  //this.render('Coll-' + this.params.collName);
-  //this.render('colfairs');
   this.render('DBColl', {
     data: { colname: this.params.collName.toTitleCase() }
   });

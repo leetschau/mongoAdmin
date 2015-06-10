@@ -1,25 +1,3 @@
-<template name="Coll-fairs">
-  <h1>Add a new document in collection Fairs</h1>
-  <div class="container-fluid">
-    {{> quickForm collection="Fairs" id="insertFairForm" type="insert"}}
-  </div>
-</template>
-
-<template name="Coll-evaluations">
-  <div class="container-fluid">
-    {{> quickForm collection="Evaluations" id="insertFairForm" type="insert"}}
-  </div>
-</template>
-
-<template name="colfairs">
-  {{#with mydata}}
-    <h1>{{colname}}</h1>
-    <div class="container-fluid">
-      {{> quickForm collection=colname id="insertFairForm" type="insert"}}
-    </div>
-  {{/with}}
-</template>
-
 <template name="DBColl">
     <h1>{{colname}}</h1>
     <div class="container-fluid">
