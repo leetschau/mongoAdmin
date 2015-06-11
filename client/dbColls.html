@@ -14,13 +14,15 @@
 <template name="NewDoc">
   <h1>Add a new doc for collection <b>{{collname}}</b></h1>
   <div class="container-fluid">
-    {{> quickForm collection=collobj id="insertForm" type="insert"}}
+    {{> quickForm collection=collobj id="insertForm" type="insert"
+            template="bootstrap3-horizontal" label-class="col-sm-2" input-col-class="col-sm-6"}}
   </div>
 </template>
 
 <template name="ModifyDoc">
   <h1>Modify doc in collection <b>{{collname}}</b></h1>
   <div class="container-fluid">
-    {{> quickForm collection=collobj doc=targetDoc id="updateForm" type="update"}}
+    {{> quickForm collection=collobj doc=targetDoc id="updateForm" type="update"
+            template="bootstrap3-horizontal" label-class="col-sm-2" input-col-class="col-sm-6"}}
   </div>
 </template>
