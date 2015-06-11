@@ -11,3 +11,10 @@ AutoForm.addHooks(null, {
     FlashMessages.sendError(error, { autoHide: true, hideDelay: 1000 });
   }
 });
+
+accountsUIBootstrap3.logoutCallback = function(error) {
+  if (error) {
+    console.log("Error:" + error);
+  }
+  Router.go('/');
+}
