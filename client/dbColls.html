@@ -2,11 +2,11 @@
     <h1>{{collname}}</h1>
     <hr>
     <div class="container-fluid">
-      <p><a href="{{collname}}/new">{{t9n "addDoc"}}</a></p>
+      <p><a class="btn btn-primary btn-lg" href="{{collname}}/new">{{t9n "addDoc"}}</a></p>
       <h2>{{t9n "existingDocs"}}</h2>
       <ul>
         {{#each docs}}
-          <li><a href="{{../collname}}/modif/{{_id}}">{{dispName}}</a></li>
+          <li class="list-group-item"><a class="btn btn-default btn-lg" href="{{../collname}}/modif/{{_id}}">{{dispName}}</a></li>
         {{/each}}
       </ul> 
     </div>
