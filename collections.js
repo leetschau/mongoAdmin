@@ -1,13 +1,13 @@
-Fairs = new Mongo.Collection('fairs');
+var Fairs = new Mongo.Collection('fairs');
 
-SponsorSchema = new SimpleSchema({
+var SponsorSchema = new SimpleSchema({
   name: { type: String },
   tel: { type: String },
   fax: { type: String },
   email: { type: String, regEx: SimpleSchema.RegEx.Email }
 });
 
-AdSchema = new SimpleSchema({
+var AdSchema = new SimpleSchema({
   name: { type: String },
   url: { type: String, regEx:SimpleSchema.RegEx.WeakDomain },
   pic: { type: [String], optional: true }
@@ -37,7 +37,14 @@ Schemas.Fair = new SimpleSchema({
 
 Fairs.attachSchema(Schemas.Fair);
 
-Books = new Mongo.Collection("books");
+var NoPerPage = 10;
+
+var FairsColl = {
+  coll: Fairs,
+  displayFields: ['chnName', 'position', 'time']
+};
+
+var Books = new Mongo.Collection("books");
 
 Schemas.Book = new SimpleSchema({
   title: { type: String, label: "Titile" },
@@ -47,3 +54,13 @@ Schemas.Book = new SimpleSchema({
 });
 
 Books.attachSchema(Schemas.Book);
+
+var BooksColl = {
+  coll: Books,
+  displayFields: ['title', 'author']
+};
+
+DataColls = {
+  fairs: FairsColl,
+  books: BooksColl
+}

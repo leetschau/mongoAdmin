@@ -9,3 +9,13 @@ body {
      "Microsoft YaHei", "微软雅黑",
      "WenQuanYi Micro Hei";
 }
+
+.footer {
+  position: absolute;
+  text-align: center;
+}
+
+.footer .container {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}

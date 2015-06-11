@@ -1,6 +1,26 @@
-<template name="DBColl">
+<template name="DbColl">
     <h1>{{colname}}</h1>
     <div class="container-fluid">
-      {{> quickForm collection=colname id="insertFairForm" type="insert"}}
+      <p><a href="{{collname}}/new">Add a new doc</a></p>
+      <h2>Existing docs:</h2>
+      <ul>
+        {{#each docs}}
+          <li><a href="{{../collname}}/modif/{{_id}}">{{dispName}}</a></li>
+        {{/each}}
+      </ul> 
     </div>
+</template>
+
+<template name="NewDoc">
+  <h1>Add a new doc for collection <b>{{collname}}</b></h1>
+  <div class="container-fluid">
+    {{> quickForm collection=collobj id="insertForm" type="insert"}}
+  </div>
+</template>
+
+<template name="ModifyDoc">
+  <h1>Modify doc in collection <b>{{collname}}</b></h1>
+  <div class="container-fluid">
+    {{> quickForm collection=collobj doc=targetDoc id="updateForm" type="update"}}
+  </div>
 </template>
