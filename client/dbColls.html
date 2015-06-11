@@ -1,5 +1,6 @@
 <template name="DbColl">
-    <h1>{{colname}}</h1>
+    <h1>{{collname}}</h1>
+    <hr>
     <div class="container-fluid">
       <p><a href="{{collname}}/new">{{t9n "addDoc"}}</a></p>
       <h2>{{t9n "existingDocs"}}</h2>
@@ -12,15 +13,17 @@
 </template>
 
 <template name="NewDoc">
-  <h1>{{t9n "addNewDoc"}} <b>{{collname}}</b></h1>
+  <h1><a href="/colls/{{collname}}">{{collname}}</a>{{t9n "addNewDoc"}}</h1>
+  <hr>
   <div class="container-fluid">
     {{> quickForm collection=collobj id="insertForm" type="insert"
-            template="bootstrap3-horizontal" label-class="col-sm-2" input-col-class="col-sm-6"}}
+            template="bootstrap3-horizontal" label-class="col-sm-4" input-col-class="col-sm-8"}}
   </div>
 </template>
 
 <template name="ModifyDoc">
-  <h1>{{t9n "modifyDoc"}}<b>{{collname}}</b></h1>
+  <h1><a href="/colls/{{collname}}">{{collname}}</a>{{t9n "modifyDoc"}}</h1>
+  <hr>
   <div class="container-fluid">
     {{> quickForm collection=collobj doc=targetDoc id="updateForm" type="update"
             template="bootstrap3-horizontal" label-class="col-sm-2" input-col-class="col-sm-6"}}

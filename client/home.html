@@ -1,5 +1,5 @@
 <head>
-  <title>adminAutoform</title>
+  <title>NewFairs Admin Console</title>
 </head>
 
 <body>
@@ -7,13 +7,17 @@
 
 <template name="Home">
   {{#if currentUser}}
+    <h1>{{t9n "collList"}}</h1>
+    <hr>
     <ul>
       {{#each colls}}
-        <li><a href="colls/{{this}}">{{this}}</a></li>
+        <li class="list-group-item"><a class="btn btn-primary btn-lg" href="colls/{{this}}">{{this}}</a></li>
       {{/each}}
     </ul>
   {{else}}
-    <h1>{{t9n "pleaseLogin"}}</h1>
+    <div class="jumbotron">
+      <h2>{{t9n "pleaseLogin"}}</h2>
+    </div>
   {{/if}}
 
 </template>
