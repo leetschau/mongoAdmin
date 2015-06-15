@@ -26,6 +26,30 @@
           {{/each}}
         </ul> 
       </div>
+
+
+      <hr>
+      <div class="row">
+        {{> esInput index="books" placeholder="Search..." }}
+        <ul>
+          {{#esEach index="books"}}
+              <li>Name of the book: {{title}} ({{author}})</li>
+          {{/esEach}}
+        </ul>
+
+        {{> esLoadMoreButton index="books"}}
+
+        {{#ifEsHasNoResults index="books"}}
+            <div class="no-results">No results found!</div>
+        {{/ifEsHasNoResults}}
+
+        {{#ifEsIsSearching index="books"}}
+                <div>Loading...</div>
+        {{/ifEsIsSearching}}
+      </div>
+
+
+
     </div>
 </template>
 
