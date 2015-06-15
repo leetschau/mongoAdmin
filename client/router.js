@@ -52,3 +52,10 @@ Router.route('/colls/:collName/modif/:_id', function() {
     }
   });
 });
+
+Router.route('/colls/:collName/del/:_id', function() {
+  var collName = this.params.collName;
+  var id = this.params._id;
+  DataColls[collName].coll.remove({_id: id});
+  Router.go('/colls/' + collName);
+});

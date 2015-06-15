@@ -2,13 +2,30 @@
     <h1>{{collname}}</h1>
     <hr>
     <div class="container-fluid">
-      <p><a class="btn btn-primary btn-lg" href="{{collname}}/new">{{t9n "addDoc"}}</a></p>
-      <h2>{{t9n "existingDocs"}}</h2>
-      <ul>
-        {{#each docs}}
-          <li class="list-group-item"><a class="btn btn-default btn-lg" href="{{../collname}}/modif/{{_id}}">{{dispName}}</a></li>
-        {{/each}}
-      </ul> 
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-primary" type="button">{{t9n "search"}}</button>
+            </span>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <a class="btn btn-success btn-lg" href="{{collname}}/new">{{t9n "addDoc"}}</a>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <ul>
+          {{#each docs}}
+            <li class="list-group-item">
+              <a class="btn btn-default btn-lg" href="{{../collname}}/modif/{{_id}}">{{dispName}}</a>
+              <a class="btn btn-danger glyphicon glyphicon-remove pull-right" href="{{../collname}}/del/{{_id}}"></a>
+            </li>
+          {{/each}}
+        </ul> 
+      </div>
     </div>
 </template>
 
