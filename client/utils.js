@@ -8,7 +8,8 @@ AutoForm.addHooks(null, {
       var currentUrl = Router.current().url;
       Session.set('currentUrl', currentUrl);
       // Todo: Add indexStr here
-      // doc['indexstr'] = doc['chnName'] + ...
+      //doc['indexStr'] = doc['chnName'] + ...
+      console.log(doc);
       return doc;
     },
     update: function(doc) {
@@ -16,6 +17,7 @@ AutoForm.addHooks(null, {
       Session.set('currentUrl', currentUrl);
       // Todo: Update indexStr here
       // doc['indexstr'] = doc['chnName'] + ...
+      console.log(doc);
       return doc;
     }
   },

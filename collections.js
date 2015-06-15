@@ -32,7 +32,8 @@ Schemas.Fair = new SimpleSchema({
   shippingAgent: { type: String, optional: true },
   website: { type: String, regEx:SimpleSchema.RegEx.WeakDomain, optional: true },
   logo: { type: String, optional: true },
-  advertisement: { type: [AdSchema], optional: true }
+  advertisement: { type: [AdSchema], optional: true },
+  indexStr: { type: String, optional: true }
 });
 
 Fairs.attachSchema(Schemas.Fair);
