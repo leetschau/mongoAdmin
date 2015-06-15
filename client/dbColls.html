@@ -30,20 +30,21 @@
 
       <hr>
       <div class="row">
-        {{> esInput index="books" placeholder="Search..." }}
+        esInput等控件的index属性必须写死成"fairs"或者"books"，不能写成{{collname}}
+        {{> esInput index=collname placeholder=collname }}
         <ul>
-          {{#esEach index="books"}}
-              <li>Name of the book: {{title}} ({{author}})</li>
+          {{#esEach index=collname}}
+              <li>Name of the book: {{chnName}} ({{time}})</li>
           {{/esEach}}
         </ul>
 
-        {{> esLoadMoreButton index="books"}}
+        {{> esLoadMoreButton index=collname}}
 
-        {{#ifEsHasNoResults index="books"}}
+        {{#ifEsHasNoResults index=collname}}
             <div class="no-results">No results found!</div>
         {{/ifEsHasNoResults}}
 
-        {{#ifEsIsSearching index="books"}}
+        {{#ifEsIsSearching index=collname}}
                 <div>Loading...</div>
         {{/ifEsIsSearching}}
       </div>
